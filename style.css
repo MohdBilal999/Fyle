@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 20px;
+    height: 100vh;
+    width: 100;
+    font-family: "Cormorant SC", serif;
+    padding: 0 5%;
+    scroll-behavior: smooth;
+}
+
+/* hero section starts here */
+#hero{
+    height: 100vh;
+    width: 100;
+}
+
+.hero-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 5%;
+}
+
+.hero-right{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: first baseline;
+    line-height: 1;
+    gap: 2.5vh;
+    padding-left: 1%;
+}
+
+.hero-right > h2{
+    font-weight: 200;
+    color: #FF3147;
+    font-size: 30px;
+    transform: UpperCase;
+}
+
+.hero-right > h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.hero-right > p{
+    margin-top: 3vh;
+    width: 85%;
+    text-wrap: wrap;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #FF3147;
+    padding: 15px;
+    border: 2PX;
+    height: 50PX;
+    width: 160px;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+button:hover{
+    background: none;
+    border: 1px solid #FF3147;
+    color: #FF3147;
+    transition: 1s all;
+}
+
+.hero-left{
+    width: 40%;
+    top: 100px;
+    left: 1058px; 
+    width: 487px;
+    height: auto;
+    /* UI Properties  */
+    background: transparent url('assets/hero.png') 0% 0% no-repeat;
+    opacity: 1; 
+    object-fit: none;
+}
+/* hero section ends here */
+
+/* form section starts here */
+#form{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 50vh;
+    width: 40%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 2px;
+    padding: 0 2%;
+    background: white;
+    z-index: 10;
+    max-width: 50%;
+    font-family: "Poppins", sans-serif;
+}
+
+.close-button {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.close-button  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #FF3147;
+    color: white;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    border: none ;
+}
+
+form > .btn-2 {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF3147;
+    padding: 10px;
+    border: 2PX;
+    width: 96%;
+    left: 0;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    margin: 0 2% 2% 2%;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    position: relative;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px; 
+}
+
+.formInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.form-group input{
+    border: none;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.firstName > input{
+    width: 3vw;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+    border-radius: 4px;
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.form-group.checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+/* forms section ends here */
+
+/* slider information starts here */
+
+#slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider-container{
+    height: 100%;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.slider-info{
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+
+.slider-heading {
+    width: 50%;
+}
+
+.slider-heading > h1{
+    color: #FF3147;
+    font-size: 24px;
+    margin-bottom: 2rem;
+    font-family: "Cormorant SC", serif;
+}
+
+.slider-heading > h2{
+    font-size: 45px;
+    font-family: "Cormorant SC", serif;
+}
+
+.slider-information{
+    width: 584px;
+    margin-top: 2rem;
+    font-size: 16px;
+    text-wrap: wrap;
+    align-self: self-end;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+/* slider information ends here */
+
+/* actual slider starts here */
+.actual-slider {
+    margin-top: 2%;
+    height: 80%;
+    width: 100;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 2.7em;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.card{
+    align-items: center;
+    height: 70%;
+    min-width: 45vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.card.one img {
+    height: 100%;
+    width: 45vh;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card.two img {
+    height: 100%;
+    width: 45vh;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card.three img {
+    height: 100%;
+    width: 45vh;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 45vh;
+    height: 0;
+    background: #FF3147;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+}
+
+.layer i{
+    font-size: 50px;
+}
+
+.layer{
+    font-family: "Poppins", sans-serif;
+}
+
+.layer h3 {
+    word-spacing: 2px;
+    font-family: "Cormorant SC", serif;
+    font-weight: 500;
+    margin-bottom: 20px; 
+}
+
+.layer p {
+    line-height: 1.5;
+}
+
+.layer .btn-3{
+    color: #FF3147;
+    background: white;
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.btn-3 > a{
+    color: #FF3147;
+    text-decoration: none;
+    font-size: large;
+}
+
+.bullets {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.bullet.active {
+    background-color: #FF3147;
+}
+
+.card.one:hover img {
+    transform: scale(1.1);
+}
+
+.card.one:hover .layer {
+    height: 100%;
+}
+/* cards sections ends here */
+
+.slider-left {
+    padding: 2%;
+    background: #000;
+    color: white;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: -40px;
+    z-index: 1;
+    font-size: larger;
+}
+
+/* our product sections starts here */
+.product-container{
+    height: 100vh;
+    width: 100;
+    padding: 0 5%;
+}
+
+.info{
+    height: 20%;
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info > h1{
+    font-size: 24px;
+    font-family: "Cormorant SC", serif;
+    color: #FF3147;
+}
+
+.info > h2{
+    font-size: 45px;
+    font-family: "Cormorant SC", serif;
+}
+
+.main-details{
+    height: 80%;
+    width: 100;
+    padding: 2%;
+    display: flex;
+}
+
+.left{
+    height: 100%;
+    width: 60%;
+}
+
+.left img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.right{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.right > .cardss{
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5%;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    font-family: "Poppins", sans-serif;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.right > .cardss h1{
+    font-size: 20px;
+}
+
+.right > .cardss p{
+    max-width: 75%;
+    font-size: 14px;
+}
+
+.right > .cardss:hover{
+    background: #FF3147;
+    color: white;
+}
+/* our product sections starts here */
+
+/* growth page starts here */
+.container-2 {
+    height: 100vh;
+    width: 100;
+    padding: 0 5%;
+}
+
+.info-growth{
+    height: 20%;
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-growth > h1 {
+    font-size: 24px;
+    font-family: "Cormorant SC", serif;
+    color: #FF3147;
+}
+
+.info-growth > h2 {
+    font-size: 45px;
+    font-family: "Cormorant SC", serif;
+    font: bold;
+}
+
+.information{
+    height: 80%;
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.information > .cards {
+    height: 270px;
+    width: 233px;
+    transition: 0.5s all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.information > .cards > h1{
+    font-size: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+}
+
+.information > .cards > p{
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.information > .cards:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.information > .cards > .img {
+    background: url('<svg xmlns="http://www.w3.org/2000/svg" width="39.297" height="34.387" viewBox="0 0 39.297 34.387"><defs><style>.a{fill:#ff3147;}</style></defs><path class="a" d="M18.776,36.02a1.226,1.226,0,0,0,1.749,0L36.235,20.1C42.787,13.466,38.131,2,28.814,2c-5.6,0-8.163,4.112-9.163,4.88C18.645,6.108,16.094,2,10.487,2,1.2,2-3.513,13.436,3.068,20.1Z" transform="translate(0.001 -2)"/></svg>') no-repeat center center;
+    background-size: contain;
+} 
+/* growth page ends here */
+
